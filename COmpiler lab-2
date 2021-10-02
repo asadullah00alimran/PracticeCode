@@ -1,0 +1,27 @@
+#include "bits/stdc++.h"
+using namespace std;
+ 
+int main() {
+    char s[1000];
+ 
+    gets(s);
+ 
+    int spc, alpha, digit, oprtr, special;
+    spc = alpha = digit = oprtr = special = 0;
+ 
+    for (int i = 0; i < strlen(s); i++) {
+        if (s[i] == ' ')printf("Its a space.\n"), spc++;
+ 
+        else if ((s[i] >= 'a' and s[i] <= 'z') or (s[i] >= 'A' and s[i] <= 'Z'))printf("%c is an Alphabet.\n", s[i]), alpha++;
+ 
+        else if (s[i] >= '0' and s[i] <= '9') printf("%c is a digit.\n", s[i]), digit++;
+ 
+        else if (s[i] == '*' or s[i] == '+' or s[i] == '-' or s[i] == '/')printf("%c is an operator.\n", s[i]), oprtr++;
+ 
+        else printf("%c is Special Character.\n", s[i]), special++;
+    }
+ 
+    printf("\nTotal\nAlphbet = %d\nSpace = %d\nDigit = %d\nOperator = %d\nSpecial = %d\n", alpha, spc, digit, oprtr, special);
+ 
+    return 0;
+}
